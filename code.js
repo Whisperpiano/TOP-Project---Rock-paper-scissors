@@ -16,7 +16,7 @@ function game() {
 
     function playRound() {
 
-        const playerSelection = prompt("Rock, paper or scissors?");
+        const playerSelection = prompt("Rock, paper or scissors?", "paper");
         const playerSelectionToLow = playerSelection.toLowerCase()
         const computerSelection = getComputerChoice();
     
