@@ -1,0 +1,185 @@
+/* Font */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,600;1,900&display=swap");
+
+/* Variables */
+:root {
+    --light-text: #ffffff;
+    --dark-text: hsl(229, 25%, 31%);
+    --score-text: hsl(229, 64%, 46%);
+    --outline: hsl(217, 16%, 45%);
+    --bg-gradient-1: hsl(214, 47%, 23%);
+    --bg-gradient-2: hsl(237, 49%, 15%);
+    --scissors-1: hsl(39, 89%, 49%);
+    --scissors-2: hsl(40, 84%, 53%);
+    --paper-1: hsl(230, 89%, 62%);
+    --paper-2: hsl(230, 89%, 65%);
+    --rock-1: hsl(349, 71%, 52%);
+    --rock-2: hsl(349, 70%, 56%);
+    --shadow-1: rgba(0, 0, 0, 0.1);
+    --shadow-2: rgba(0, 0, 0, 0.3);
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+/* General */
+
+body {
+    background: radial-gradient(at top, var(--bg-gradient-1), var(--bg-gradient-2));
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+    padding: 030px;
+    border: 3px solid var(--outline);
+    border-radius: 20px;
+
+    & .score__container {
+        background-color: var(--light-text);
+        padding: 20px 50px;
+        border-radius: 10px;
+        text-align: center;
+
+        & .title {
+            font-size: 14px;
+            color: var(--score-text);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        & .score {
+            color: var(--dark-text);
+            font-size: 50px;
+            font-weight: 700;
+        }
+    }
+}
+
+section {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "paper scissors" 
+    "rock rock";
+    place-items: center;
+    min-height: 500px;
+    height: 100%;
+    max-width: 700px;
+    margin: auto;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url("images/bg-triangle.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: -10;
+    }
+
+    & button {
+        position: relative;
+        background: var(--light-text);
+        aspect-ratio: 1;
+        min-width: 160px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        box-shadow: inset 0px 8px var(--shadow-1);
+        outline: none;
+
+        & img {
+            max-width: 60px;
+            width: 100%;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 130%;
+            width: 130%;
+            top: -15%;
+            left: -15%;
+            border-radius: 50%;
+            z-index: -10;
+        }
+    }
+
+    & button:nth-child(1) {
+        grid-area: paper;
+
+        &::before {
+            background: linear-gradient(to bottom, var(--paper-1), var(--paper-2));
+            box-shadow: inset 0px -8px var(--shadow-2);
+        }
+    }
+    & button:nth-child(2) {
+        grid-area: scissors;
+
+        &::before {
+            background: linear-gradient(to bottom, var(--scissors-1), var(--scissors-2));
+            box-shadow: inset 0px -8px var(--shadow-2);
+        }
+    }
+    & button:nth-child(3) {
+        grid-area: rock;
+
+        &::before {
+            background: linear-gradient(to bottom, var(--rock-1), var(--rock-2));
+            box-shadow: inset 0px -8px var(--shadow-2);
+        }
+    }
+}
+
+article {
+    padding: 100px 20px;
+    max-width: 1000px;
+    margin: auto;
+
+    & .rules-btn {
+        text-transform: uppercase;
+        color: var(--light-text);
+        background: transparent;
+        border: 2px solid var(--outline);
+        border-radius: 5px;
+        font-weight: 400;
+        letter-spacing: 3px;
+        cursor: pointer;
+        margin-left: auto;
+        display: block;
+        padding: 10px 30px;
+
+        &:focus {
+            border: 2px solid var(--light-text);
+        }
+    }
+}
+
+
+footer {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+}
+
+
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }

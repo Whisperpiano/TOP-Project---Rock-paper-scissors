@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - Rock Paper Scissors</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
+
+    <header>
+        <img src="images/logo.svg" alt="logo" class="logo">  
+        <div class="score__container">
+            <h2 class="title">Score</h2>
+            <span class="score">12</span>
+        </div>
+    </header>
+    
+    <section>
+
+        <button class="choice-btn" id="paper">
+            <img src="images/icon-paper.svg" alt="Paper">
+        </button>
+        <button class="choice-btn" id="scissors">
+            <img src="images/icon-scissors.svg" alt="Scissors">
+        </button>
+        <button class="choice-btn" id="rock">
+            <img src="images/icon-rock.svg" alt="Rock">
+        </button>
+
+    </section>
+
+    <article>
+        <button class="rules-btn">Rules</button>
+    </article>
     
 
-    <script src="code.js"></script>
+  
+  <footer class="footer">
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">WhisperPiano</a>.
+      </div>
+  </footer>
 </body>
 </html>
