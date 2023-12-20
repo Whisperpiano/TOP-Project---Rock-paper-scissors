@@ -59,7 +59,7 @@ header {
             letter-spacing: 3px;
         }
 
-        & .score {
+        & .user-score, span, .computer-score {
             color: var(--dark-text);
             font-size: 50px;
             font-weight: 700;
@@ -67,6 +67,10 @@ header {
     }
 }
 
+h1 {
+    text-align: center;
+    padding: 50px;
+}
 section {
     position: relative;
     display: grid;
@@ -179,6 +183,10 @@ footer {
     width: 100%;
 }
 
+
+.red_shadow { box-shadow: 0px 0px 30px red;}
+.green_shadow { box-shadow: 0px 0px 30px green;}
+.gray_shadow { box-shadow: 0px 0px 30px gray;}
 
 
 .attribution { font-size: 11px; text-align: center; }
